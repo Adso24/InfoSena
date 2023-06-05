@@ -1,0 +1,95 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+/* NAVEGACION */
+.navegacion-areas{
+    margin: 0 auto;
+    width: 70%;
+    background-color: #00324D; 
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3rem;
+    border-radius: 0 0 2rem 2rem;
+    margin-bottom: 5rem;
+}
+.navegacion-areas a{
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Roboto';
+    font-weight: 500;
+}
+
+/* CABECERO */
+
+.cabecero-areas{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    background-color: red;
+
+}
+
+
+
+/* AREAS */
+#contenedor-padre{
+    width: 80%;
+    margin: 0 auto;
+    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+
+}
+
+.area{
+    border-radius: 20px;
+    padding: 2.5rem;
+    background-color: #F5F5F5;
+    display: grid;
+    align-items: center;
+
+}
+.imagen-area{
+    border-radius: 2rem;
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+    height: 150px;
+    display: block;
+}
+.titulo-area{
+    font-weight: 700;
+    font-family: 'roboto';
+    font-size: 2rem;
+    margin-bottom: 4rem;
+}
+.descripcion-area{
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    font-family: 'roboto';
+}
+.enlace-areas{
+    margin: 0 auto;
+    background-color: #00324D;
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    font-family: 'roboto';
+    text-decoration: none;
+    font-size: 2rem;
+    border-radius: 3rem;
+}
+.enlace-areas:hover{
+    background-color: #BAE9F1;
+    color: #00324D;
+    transition: background-color .3s ease-in-out;
+}

@@ -33,7 +33,7 @@ img{
     z-index: 1;
 }
 .navegacion a{
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-decoration: none;
     color: #fff;
     font-family: 'Roboto';
@@ -75,14 +75,14 @@ img{
 }
 .contenido h1{
     color: #fff;
-    font-size: 15rem;
+    font-size: 10rem;
     font-family: 'Roboto';
     font-weight: 500;
 }
 .contenido h4{
     color: #fff;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: 'roboto';
     font-weight: 300;
     margin-bottom: 4rem;
@@ -93,7 +93,7 @@ img{
 .contenido a{
     padding: 2rem 3.5rem;
     color: #00324D;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: 'Roboto';
     background-color: #fff;
     border-radius: 2rem;
