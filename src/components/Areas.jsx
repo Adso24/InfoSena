@@ -8,6 +8,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/construccion.jpg",
+    link : "/areas/construccion"
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/informatica.jpg",
+    link : "/areas"
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/automatizacion.jpg",
+    link : "/areas"
   },
   {
     id: 4,
@@ -29,6 +32,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/confecciones.jpg",
+    link : "/areas"
   },
   {
     id: 5,
@@ -36,6 +40,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/soldadura.jpg",
+    link : "/areas"
   },
   {
     id: 6,
@@ -43,6 +48,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/electricidad.jpg",
+    link : "/areas"
   },
   {
     id: 7,
@@ -50,6 +56,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/mecanica.jpg",
+    link : "/areas"
   },
   {
     id: 8,
@@ -57,6 +64,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/automotriz.jpg",
+    link : "/areas"
   },
 ];
 export const Areas = () => {
@@ -93,24 +101,21 @@ export const Areas = () => {
       </div>
 
       <div id="contenedor-padre">
-        {areas.map(({ id, title, description, image }) => {
+        {areas.map(({ id, title, description, image, link }) => {
           return (
             <div key={id} className="area">
               <img src={image} alt="imagen-area" className="imagen-area" />
               <p className="titulo-area">{title}</p>
               {/* <p className="descripcion-area">{description}</p> */}
-              <a href="#" className="enlace-areas">
+              <Link to={link} className="enlace-areas">
                 Ver más
-              </a>
+              </Link>
             </div>
           );
         })}
       </div>
     </div>
 
-    <footer>
-      <h4>HOLA SOY EL PIE DE PÁGINA</h4>
-    </footer>
 
 
     </>
