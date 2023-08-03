@@ -1,0 +1,135 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+.margen-nav{
+    margin: 0 auto;
+    
+}
+.contenedor-padre-bienestar{
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #00AEEF;
+
+
+}
+.contenedor-bienestar{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.imagen1-bienestar{
+    width: 450px;
+}
+h1{
+ font-family: 'roboto';
+}
+.titulo-seccion-2{
+    font-weight: 300;
+    font-size: 3rem;
+    text-align: end;
+}
+
+/* SECCION 2 */
+.titulo-seccion-2{
+    width: 40rem;
+}
+.contenedor-bienestar-seccion-2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.parte-izquierda-bienestar{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+}
+.imagen-2-bienestar{
+    width: 450px;
+}
+.lightbox-seccion-2{
+    font-size: 2rem;
+    font-family: 'roboto';
+    text-decoration: none;
+    margin-top: 2rem;
+    text-align: end;
+    padding: .8rem 3rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: #CCC;
+    color: black;
+}   
+
+
+/* SECCIÓN 3 */
+
+.contenedor-padre-bienestar-seccion-3{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50rem;
+    background-color: #00AEEF;
+
+}
+
+  .circulo {
+    margin-left: 10rem;
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: .3rem solid #006d95;
+  }
+  
+  .circulo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .circulo-1 {
+    width: 20rem;
+    height: 20rem;
+    top: 12rem;
+    left: -8rem;
+  }
+  
+  .circulo-2 {
+    top: 4rem;
+    right: -10rem;
+  }
+  
+  .circulo-3 {
+    bottom: 5rem;
+    left: -15rem;
+}
+.circulo-3 img{
+    object-position: top right;
+
+}
+  
+  .circulo-4 {
+    width: 18rem;
+    height: 18rem;
+    bottom: 11rem;
+  }
+
+  .color-azul{
+    background-color: #00AEEF;
+}
+  
