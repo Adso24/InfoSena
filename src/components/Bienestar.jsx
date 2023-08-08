@@ -84,7 +84,7 @@ export const Bienestar = () => {
 
       <section>
         <div className="slider-bienestar">
-        <Slider />
+        <Slider/>
         </div>
       </section>
     </>

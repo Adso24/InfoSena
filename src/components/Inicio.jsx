@@ -8,21 +8,11 @@ export const Inicio = () => {
             <div className="capa"></div>
                 <nav>
                     <div className="navegacion">
-                        <a>
                             <Link to="/">Inicio</Link>
-                        </a>
-                        <a>
                             <Link to="/bienestar">Bienestar</Link>
-                        </a>    
-                        <a>
                             <Link to="/biblioteca">Biblioteca</Link>
-                        </a>
-                        <a>
                             <Link to="/directivas">Directivas</Link>
-                        </a>
-                        <a>
                             <Link to="/areas">Áreas</Link>
-                        </a>
                     </div>
                 </nav>
             <main>

@@ -2,7 +2,6 @@ import { useRouteError } from "react-router-dom";
 import '../Css/Error.css'
 export const ErrorPage = () => {
     const error = useRouteError();
-    console.error(error);
   
     return (
       <div className="contenedor">

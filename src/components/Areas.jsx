@@ -1,6 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Routes, Route } from "react-router-dom";
 import "../Css/Areas.css";
+import { ErrorPage } from "../components/ErrorRuta";
+
 const areas = [
   {
     id: 1,
@@ -16,7 +18,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/informatica.jpg",
-    link : "/areas"
+    link : "/areas/teleinformatica"
   },
   {
     id: 3,
@@ -24,7 +26,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/automatizacion.jpg",
-    link : "/areas"
+    link : "/areas/automatizacion"
   },
   {
     id: 4,
@@ -32,7 +34,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/confecciones.jpg",
-    link : "/areas"
+    link : "/areas/confecciones"
   },
   {
     id: 5,
@@ -40,7 +42,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/soldadura.jpg",
-    link : "/areas"
+    link : "/areas/soldadura"
   },
   {
     id: 6,
@@ -48,7 +50,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/electricidad.jpg",
-    link : "/areas"
+    link : "/areas/electricidad"
   },
   {
     id: 7,
@@ -56,7 +58,7 @@ const areas = [
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
     image: "/src/images/mecanica.jpg",
-    link : "/areas"
+    link : "/areas/fabricacionmecanica"
   },
   {
     id: 8,
@@ -89,7 +91,7 @@ export const Areas = () => {
 
       <div className="contenido-areas">
         <div className="imagen-cabecero-areas">
-          <img src="/src/images/logo-verde.png" alt="logo-verde-areas" />
+          <img src="/src/images/logo-verde.png" alt="logo-verde-areas"/>
         </div>
         <div className="cabecero-derecha">
           <h1>Áreas de Formación</h1>
@@ -107,16 +109,17 @@ export const Areas = () => {
               <img src={image} alt="imagen-area" className="imagen-area" />
               <p className="titulo-area">{title}</p>
               {/* <p className="descripcion-area">{description}</p> */}
-              <Link to={link} className="enlace-areas">
+              <Link to={`${link}`} className="enlace-areas">
                 Ver más
               </Link>
             </div>
           );
         })}
       </div>
+      
     </div>
 
-
+        
 
     </>
   );

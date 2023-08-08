@@ -1,9 +1,9 @@
-const area = [
+const areas = [
   {
     id: 1,
-    title: "gjfskjgl",
+    title: "Construcción",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aliquam quos iure minus corporis animi corrupti",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim aliquam sint, ut recusandae molestias repudiandae veritatis exercitationem, maiores, minus quam esse nisi iste ratione tempore perspiciatis. Ducimus harum reprehenderit cum?",
     image: "/src/images/construccion.jpg",
   },
   {
@@ -14,22 +14,10 @@ const area = [
     image: "/src/images/informatica.jpg",
   },
 ];
-const resultado = area.filter(({ id }) => id == 2);
 export const Construccion = () => {
   return (
     <>
-      <div>
-        {resultado.map(({ id, title, description }) => {
-          return (
-            <>
-              <div key={id} className="area-individual">
-                <h1>{title}</h1>
-                <p>{description}</p>
-              </div>
-            </>
-          );
-        })}
-      </div>
+      <h1>{areas[0].description}</h1>
     </>
   );
 };

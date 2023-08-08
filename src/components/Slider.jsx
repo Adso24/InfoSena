@@ -33,9 +33,11 @@ export const Slider = () => {
       }, 3000);
 
       return () => clearInterval(interval);
+      
+      
     }
   }, [autoPlay, images.length]);
-
+  
   return (
     <>
       <div className="slider-container">
@@ -45,10 +47,10 @@ export const Slider = () => {
           </div>
           <div className="slider-arrows">
             <button onClick={handlePrev}>
-              <span class="material-symbols-outlined">arrow_back</span>
+              <span className="material-symbols-outlined">arrow_back</span>
             </button>
             <button onClick={handleNext}>
-              <span class="material-symbols-outlined">arrow_forward</span>
+              <span className="material-symbols-outlined">arrow_forward</span>
             </button>
           </div>
         </div>

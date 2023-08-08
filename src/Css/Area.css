@@ -1,0 +1,54 @@
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    padding: 0;
+    margin: 0;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+/* HEADER */
+.contenedor-area-individual{
+    background-image: url('/src/images/fondo.jpg');
+    margin-top: 5%;
+    width: 60%;
+    /* height: 100vh; */
+    /* background-color: rgb(98, 179, 193); */
+    margin-left: 10%;
+}
+/* .contenedor-header-area{
+    background-color: rgb(113, 110, 255);
+} */
+.descripcion-area{
+    text-align: justify;
+    font-weight: 300;
+}
+.titulo-area-individual{
+    color: #00324D;
+    font-size: 5rem;
+}
+
+/* AREAS */
+.contenedor-programas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* background-color: beige; */
+  }
+
+li{
+    list-style: none;
+
+}
+h2{
+    font-size: 3rem;
+    font-family: 'roboto';
+    font-weight: 300;
+    color: #00324D;
+}
+a {
+    text-decoration: none;
+    font-size: 2rem;
+}
