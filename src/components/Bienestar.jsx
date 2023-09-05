@@ -1,22 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../Css/Bienestar.css";
 import { Slider } from "../components/Slider";
 
 export const Bienestar = () => {
+ 
+
+  
+
   return (
     <>
       <header>
         <nav>
           <div className="navegacion-areas margen-nav">
             <Link to="/">Inicio</Link>
-
             <Link to="/bienestar">Bienestar</Link>
-
             <Link to="/biblioteca">Biblioteca</Link>
-
             <Link to="/directivas">Directivas</Link>
-
             <Link to="/areas">Áreas</Link>
           </div>
         </nav>
@@ -43,7 +43,7 @@ export const Bienestar = () => {
               tempore deleniti maxime laborum delectus dolorem praesentium
               repellat cupiditate iure quo?
             </h1>
-            <a href="#" className="lightbox-seccion-2">
+            <a href='#'className="lightbox-seccion-2" id="abrirLightbox">
               Ver más
             </a>
           </div>
@@ -75,16 +75,32 @@ export const Bienestar = () => {
               tempore deleniti maxime laborum delectus dolorem praesentium
               repellat cupiditate iure quo?
             </h1>
-            <a href="#" className="lightbox-seccion-2">
+            <Link to='#' className="lightbox-seccion-2" id="abrirLightbox">
               Ver más
-            </a>
+            </Link>
           </div>
+
+          {/* LIGHTBOX FINAL */}
+            <div className="lightbox" id="miLightbox">
+              <div className="lightbox-contenido">
+                <h3 className="lightbox-titulo">Más Información</h3>
+                <div className="lightbox-contenido-texto">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus beatae cupiditate deserunt cum modi quo explicabo, pariatur corrupti provident veniam. Esse consectetur alias asperiores cum id temporibus impedit itaque sed.
+                </div>
+                <div className="lightbox-contenido-imagen">
+                  <img src="/src/images/automatizacion.jpg" alt="Imagen" />
+                </div>
+                <Link to='#' className="lightbox-seccion-2-final" id="cerrarLightbox">
+                  Cerrar
+                </Link>
+              </div>
+            </div>
         </div>
       </section>
 
       <section>
         <div className="slider-bienestar">
-        <Slider/>
+          <Slider />
         </div>
       </section>
     </>

@@ -1,5 +1,4 @@
 import { useParams, Link } from "react-router-dom";
-import { Construccion } from "../components/Construccion.jsx";
 import "/src/Css/Area.css";
 const programas = [
   {
@@ -266,38 +265,52 @@ export const Area = () => {
   const { nombreArea } = useParams();
   const area = programas.find((programa) => programa.param === nombreArea);
 
-  console.log(area);
-
   if (!area) {
     return <div>Área no encontrada</div>;
   }
 
   return (
-    <div className="contenedor-area-individual">
-      <div className="contenedor-header-area">
-        <Link to={"/areas"}>
-          <span className="material-symbols-outlined">arrow_back</span>
-        </Link>
+    <>
+      <div className="contenedor-padre">
+        <div className="contenedor-padre-elementos">
+          <div className="contenido-izquierda">
+            <div className="contenedor-header-area">
+              <Link to={"/areas"}>
+                <span className="material-symbols-outlined">arrow_back</span>
+              </Link>
+              <h1 className="titulo-area-individual">{area.title}</h1>
+              <p className="descripcion-area">{area.description}</p>
+            </div>
+            <hr />
 
-        <h1 className="titulo-area-individual">{area.title}</h1>
-        <p className="descripcion-area">{area.description}</p>
-      </div>
-      <hr />
-
-      <div className="contenedor-programas">
-        {area.tipos.map((tipo) => (
-          <div key={tipo.tipoPrograma}>
-            <h2>{tipo.tipoPrograma}</h2>
-            <ul>
-              {tipo.programas.map((programa) => (
-                <li key={programa.id}>
-                  <Link to={programa.ruta}>-{programa.programa}</Link>
-                </li>
+            <div className="contenedor-programas">
+              {area.tipos.map((tipo) => (
+                <div key={tipo.tipoPrograma}>
+                  <h2>{tipo.tipoPrograma}</h2>
+                  <ul>
+                    {tipo.programas.map((programa) => (
+                      <li key={programa.id}>
+                        <Link to={programa.ruta}>-{programa.programa}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-        ))}
+          <div className="contenido-derecha">
+            <div className="tarjeta-imagen">
+              <img
+                src="/src/images/construccion.jpg"
+                alt="imagen-area-individual"
+                width="50%"
+                height="auto"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
+
