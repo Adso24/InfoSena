@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect, useState} from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import "../Css/Areas.css";
 import { ErrorPage } from "../components/ErrorRuta";
@@ -70,6 +70,19 @@ const areas = [
   },
 ];
 export const Areas = () => {
+  const [data, setData] = useState([]);
+
+
+  useEffect(() => {
+    const getData = async () => {
+      const url = ``;
+      const resp = await fetch(url);
+      const data = await resp.json();
+      return setData(data);
+    };
+    getData();
+  }, [data]);
+
   return (
     <>
 
@@ -82,8 +95,6 @@ export const Areas = () => {
           <Link to="/bienestar">Bienestar</Link>
 
           <Link to="/biblioteca">Biblioteca</Link>
-
-          <Link to="/directivas">Directivas</Link>
 
           <Link to="/areas">Áreas</Link>
         </div>

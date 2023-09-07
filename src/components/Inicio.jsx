@@ -11,7 +11,6 @@ export const Inicio = () => {
                             <Link to="/">Inicio</Link>
                             <Link to="/bienestar">Bienestar</Link>
                             <Link to="/biblioteca">Biblioteca</Link>
-                            <Link to="/directivas">Directivas</Link>
                             <Link to="/areas">Áreas</Link>
                     </div>
                 </nav>
@@ -23,7 +22,7 @@ export const Inicio = () => {
                         </div>
                         <h1>CDITI</h1>
                         <h4>Centro de diseño e innovación <br />tecnológico industrial</h4>
-                        <a>Recorrido virtual</a>
+                        <Link target='_blank' to="https://simmer.io/@ludone/0701">Recorrido virtual</Link>
                     </div>
                 </div>
             </main>

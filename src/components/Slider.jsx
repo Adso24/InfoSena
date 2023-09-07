@@ -20,10 +20,9 @@ export const Slider = () => {
   };
 
   const images = [
-    "/src/images/bienestar-header.png",
-    "/src/images/bienestar-header.png",
-    "/src/images/bienestar-header.png",
-    "/src/images/bienestar-header.png",
+    "/src/images/slider-bienestar-1.jpeg",
+    "/src/images/slider-bienestar-2.jpeg",
+    "/src/images/slider-bienestar-3.jpeg",
   ];
 
   useEffect(() => {

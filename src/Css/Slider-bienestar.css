@@ -36,8 +36,8 @@ button{
 
   .carrusel .slider-item {
     margin: auto;
-    width: 30rem; /* Tamaño deseado para el contenedor del carrusel */
-    height: 30rem; 
+    width: 100%; /* Tamaño deseado para el contenedor del carrusel */
+    height: 35rem; 
     border-radius: 8px;
     overflow: hidden;
 

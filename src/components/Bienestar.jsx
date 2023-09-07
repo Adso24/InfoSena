@@ -4,24 +4,41 @@ import "../Css/Bienestar.css";
 import { Slider } from "../components/Slider";
 
 export const Bienestar = () => {
- 
+  const [lightboxVisible, setLightboxVisible] = useState(false);
+  const [lightboxVisible2, setLightboxVisible2] = useState(false);
+
+  const abrirLightbox = () => {
+    setLightboxVisible(true);
+  };
+
+  const cerrarLightbox = () => {
+    setLightboxVisible(false);
+  };
+  const abrirLightbox2 = () => {
+    setLightboxVisible2(true);
+  };
+
+  const cerrarLightbox2 = () => {
+    setLightboxVisible2(false);
+  };
 
   
 
   return (
     <>
+      {/* BARRA DE NAVEGACIÓN */}
       <header>
         <nav>
           <div className="navegacion-areas margen-nav">
             <Link to="/">Inicio</Link>
             <Link to="/bienestar">Bienestar</Link>
             <Link to="/biblioteca">Biblioteca</Link>
-            <Link to="/directivas">Directivas</Link>
             <Link to="/areas">Áreas</Link>
           </div>
         </nav>
       </header>
 
+      {/* SECCION MAIN DE LA PÁGINA (CABECERO) */}
       <section>
         <div className="contenedor-padre-bienestar">
           <div className="contenedor-bienestar">
@@ -35,6 +52,7 @@ export const Bienestar = () => {
         </div>
       </section>
 
+      {/* SECCION DE ENFERMERIA */}
       <section>
         <div className="contenedor-bienestar-seccion-2">
           <div className="parte-izquierda-bienestar">
@@ -43,14 +61,52 @@ export const Bienestar = () => {
               tempore deleniti maxime laborum delectus dolorem praesentium
               repellat cupiditate iure quo?
             </h1>
-            <a href='#'className="lightbox-seccion-2" id="abrirLightbox">
+            <a
+              href="#"
+              className="boton-lightbox-seccion-2"
+              id="abrirLightbox"
+              onClick={(e) => {
+                e.preventDefault();
+                abrirLightbox();
+              }}
+            >
               Ver más
             </a>
           </div>
           <div className="imagen-2-bienestar">
-            <img src="/src/images/bienestar-header.png" alt="" />
+            <img src="/src/images/bienestar-enfermeria.png" alt="" />
           </div>
         </div>
+
+        {lightboxVisible && (
+          <div className="lightbox-mostrado">
+            <div className="contenido-lightbox-mostrado">
+              <div className="cabecero-lightbox">
+                <h2 className="titulo-lightbox">MÁS INFORMACIÓN:</h2>
+                <span
+                  className="material-symbols-outlined cerrar-lightbox"
+                  onClick={cerrarLightbox}
+                >
+                  close
+                </span>
+              </div>
+              <div className="texto-imagen-lightbox">
+                <p className="texto-lightbox-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta voluptas adipisci aut id omnis nostrum, laboriosam
+                  quaerat harum aspernatur nobis ipsa eveniet hic, officiis
+                  fuga? Aliquid, sapiente illo beatae cum molestiae et commodi
+                  aperiam. Atque magni incidunt molestiae reiciendis alias.
+                </p>
+                <img
+                  className="imagen-lightbox-directivas"
+                  src="/src/images/lightbox-enfermeria.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       <section>
@@ -75,27 +131,50 @@ export const Bienestar = () => {
               tempore deleniti maxime laborum delectus dolorem praesentium
               repellat cupiditate iure quo?
             </h1>
-            <Link to='#' className="lightbox-seccion-2" id="abrirLightbox">
+            <a
+              href="#"
+              className="boton-lightbox-seccion-2"
+              id="abrirLightbox-2"
+              onClick={(e) => {
+                e.preventDefault();
+                abrirLightbox2();
+              }}
+            >
               Ver más
-            </Link>
+            </a>
           </div>
+        </div>
 
-          {/* LIGHTBOX FINAL */}
-            <div className="lightbox" id="miLightbox">
-              <div className="lightbox-contenido">
-                <h3 className="lightbox-titulo">Más Información</h3>
-                <div className="lightbox-contenido-texto">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus beatae cupiditate deserunt cum modi quo explicabo, pariatur corrupti provident veniam. Esse consectetur alias asperiores cum id temporibus impedit itaque sed.
-                </div>
-                <div className="lightbox-contenido-imagen">
-                  <img src="/src/images/automatizacion.jpg" alt="Imagen" />
-                </div>
-                <Link to='#' className="lightbox-seccion-2-final" id="cerrarLightbox">
-                  Cerrar
-                </Link>
+        {/* LIGHTBOX DE LA PARTE DE ABAJO DE LA PARTE DE DIRECTIVAS */}
+        {lightboxVisible2 && (
+          <div className="lightbox-mostrado">
+            <div className="contenido-lightbox-mostrado">
+              <div className="cabecero-lightbox">
+                <h2 className="titulo-lightbox">MÁS INFORMACIÓN:</h2>
+                <span
+                  className="material-symbols-outlined cerrar-lightbox"
+                  onClick={cerrarLightbox2}
+                >
+                  close
+                </span>
+              </div>
+              <div className="texto-imagen-lightbox">
+                <p className="texto-lightbox-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta voluptas adipisci aut id omnis nostrum, laboriosam
+                  quaerat harum aspernatur nobis ipsa eveniet hic, officiis
+                  fuga? Aliquid, sapiente illo beatae cum molestiae et commodi
+                  aperiam. Atque magni incidunt molestiae reiciendis alias.
+                </p>
+                <img
+                  className="imagen-lightbox-directivas"
+                  src="/src/images/lightbox-directivas.jpeg"
+                  alt=""
+                />
               </div>
             </div>
-        </div>
+          </div>
+        )}
       </section>
 
       <section>
