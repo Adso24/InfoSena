@@ -5,6 +5,7 @@ import { Programas } from "../components/Programas";
 import { ErrorPage } from "../components/ErrorRuta";
 import {Bienestar} from '../components/Bienestar';
 import {Area} from '../components/Area';
+import {Programa} from '../components/Programa';
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
   {
     path: "/areas/:nombreArea",
     element: <Area />,
+  },
+  {
+    path : "/areas/:nombreArea/:nombrePrograma",
+    element : <Programa/>
   },
   // {
   //   path: "/areas/:nombreArea/nombrePrograma",

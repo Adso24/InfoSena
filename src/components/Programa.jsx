@@ -1,5 +1,5 @@
-import { useParams, Link } from "react-router-dom";
-import "/src/Css/Area.css";
+import '../Css/Programa.css';
+import {useParams} from 'react-router-dom';
 const programas = [
   {
     id: 1,
@@ -17,21 +17,29 @@ const programas = [
             id: 1,
             programa: "programa 1",
             ruta: "/areas/construccion/programa1",
+            descripcion: "Descripción del programa técnico 1...",
+            imagenes: ["/src/images/tecnico1-img1.jpg", "/src/images/tecnico1-img2.jpg"],
           },
           {
             id: 2,
             programa: "programa 1",
             ruta: "/areas/construccion/programa1",
+            descripcion: "Descripción del programa técnico 1...",
+            imagenes: ["/src/images/tecnico1-img1.jpg", "/src/images/tecnico1-img2.jpg"],
           },
           {
             id: 3,
             programa: "programa 1",
             ruta: "/areas/construccion/programa1",
+            descripcion: "Descripción del programa técnico 1...",
+            imagenes: ["/src/images/tecnico1-img1.jpg", "/src/images/tecnico1-img2.jpg"],
           },
           {
             id: 4,
             programa: "programa 1",
             ruta: "/areas/construccion/programa1",
+            descripcion: "Descripción del programa técnico 1...",
+            imagenes: ["/src/images/tecnico1-img1.jpg", "/src/images/tecnico1-img2.jpg"],
           },
         ],
       },
@@ -49,6 +57,8 @@ const programas = [
             id: 2,
             programa: "programa 2",
             ruta: "/areas/construccion/programa2",
+            descripcion: "Descripción del programa de arquitectura...",
+            imagenes: ["/src/images/arquitectura-img1.jpg", "/src/images/arquitectura-img2.jpg"],
           },
         ],
       },
@@ -262,57 +272,39 @@ const programas = [
     ],
   },
 ];
+export const Programa = () => {
+  const { nombrePrograma } = useParams();
+  const programa = programas.find((programa) => programa.tipos.tipoPrograma === nombrePrograma);
+  
 
-export const Area = () => {
-  const { nombreArea } = useParams();
-  const area = programas.find((programa) => programa.param === nombreArea);
-
-  if (!area) {
+  if (!nombrePrograma) {
     return <div>Área no encontrada</div>;
   }
-
+  
   return (
-    <>
-      <div className="contenedor-padre">
-        <div className="contenedor-padre-elementos">
-          <div className="contenido-izquierda">
-            <div className="contenedor-header-area">
-              <Link to={"/areas"}>
-                <span className="material-symbols-outlined">arrow_back</span>
-              </Link>
-              <h1 className="titulo-area-individual">{area.title}</h1>
-              <p className="descripcion-area">{area.description}</p>
-            </div>
-            <hr />
+    <div className="App">
+      <header className="App-header">
+        {/* <img class="verde" src={verde} /> */}
+        <h1 className="text-sm-end">TECNÓLOGO</h1>
+        <h2>DIBUJO ARQUITECTONICO</h2>
+        <div className="centrado">Lorem ipsum dolor sit amet, consectetuer adipiscing
+          elit, sed diam nonummy nibh euismod lncidunt ut
+          laoreet dolore magna aliquam erat volutpat. Ut wisi
+          enim ad minim veniam, quis nostrud exerci taóon
+          ullamcorper suscipit lobors nisl ut aliquip ex ea
+          commodo consequat. Duis autem vel eum iriure
+          dolor in hendrerit in vulputate velit esse molese</div>
+        
+        <button type="button" className="btn btn-outline-dark"><a href="https://oferta.senasofiaplus.edu.co/sofia-oferta/">INSCRIBIRSE</a></button>
+        <div className='imagenes'>
+          {/* <img class="Azul" src={azul} /> */}
+          <img className="Imagen1" src='/src/images/Arquitectura1.jpg' />
+          <img className="Imagen2" src='/src/images/Arquitectura2.jpg' />
 
-            <div className="contenedor-programas">
-              {area.tipos.map((tipo) => (
-                <div key={tipo.tipoPrograma}>
-                  <h2>{tipo.tipoPrograma}</h2>
-                  <ul>
-                    {tipo.programas.map((programa) => (
-                      <li key={programa.id}>
-                        <Link to={programa.ruta}>-{programa.programa}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="contenido-derecha">
-            <div className="tarjeta-imagen">
-              <img
-                src="/src/images/construccion.jpg"
-                alt="imagen-area-individual"
-                width="50%"
-                height="auto"
-              />
-            </div>
-          </div>
+
         </div>
-      </div>
-    </>
-  );
-};
 
+      </header>
+    </div>
+  );
+}
