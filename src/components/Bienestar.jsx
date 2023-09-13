@@ -4,9 +4,11 @@ import "../Css/Bienestar.css";
 import { Slider } from "../components/Slider";
 
 export const Bienestar = () => {
+  // Creamos dos variables booleanas para utilizar de auxiliares en los botones "ver más" o lightbox, los definimos en false para que no se activen por defecto, los creamos con el hook useState()
   const [lightboxVisible, setLightboxVisible] = useState(false);
   const [lightboxVisible2, setLightboxVisible2] = useState(false);
 
+  // Creamos las funciones para mpodificar su estado por medio de los setters y que se rendericen los lightbox
   const abrirLightbox = () => {
     setLightboxVisible(true);
   };
@@ -66,6 +68,7 @@ export const Bienestar = () => {
               className="boton-lightbox-seccion-2"
               id="abrirLightbox"
               onClick={(e) => {
+                // Aquí activamos la función para que se abra la franja de información adicional de enfermeria y usamos el e.preventDefault para impedir que se actualice la página de manera automática al darle click
                 e.preventDefault();
                 abrirLightbox();
               }}
@@ -78,6 +81,7 @@ export const Bienestar = () => {
           </div>
         </div>
 
+{/* Esto es lo que se va a mostrar cuando la variable auxiliar cambie a true */}
         {lightboxVisible && (
           <div className="lightbox-mostrado">
             <div className="contenido-lightbox-mostrado">
@@ -136,6 +140,7 @@ export const Bienestar = () => {
               className="boton-lightbox-seccion-2"
               id="abrirLightbox-2"
               onClick={(e) => {
+                  // Aquí activamos la función para que se abra la franja de información adicional de directivas y usamos el e.preventDefault para impedir que se actualice la página de manera automática al darle click
                 e.preventDefault();
                 abrirLightbox2();
               }}

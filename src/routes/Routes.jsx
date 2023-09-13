@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Areas } from "../components/Areas";
 import { Inicio } from "../components/Inicio";
-import { Programas } from "../components/Programas";
 import { ErrorPage } from "../components/ErrorRuta";
 import {Bienestar} from '../components/Bienestar';
 import {Area} from '../components/Area';
 import {Programa} from '../components/Programa';
+import {Tecnico} from '../components/Tecnico';
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -15,10 +15,6 @@ export const router = createBrowserRouter([
   {
     path: "/areas",
     element: <Areas />,
-  },
-  {
-    path: "/programas",
-    element: <Programas />,
   },
   {
     path : "/bienestar",
@@ -32,12 +28,6 @@ export const router = createBrowserRouter([
     path : "/areas/:nombreArea/:nombrePrograma",
     element : <Programa/>
   },
-  // {
-  //   path: "/areas/:nombreArea/nombrePrograma",
-  //   element: <Programa />,
-  // }
-  // {
-  //   path: "/areas/construccion",
-  //   element: <Construccion />,
-  // },
+
+ 
 ]);

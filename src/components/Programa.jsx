@@ -1,310 +1,171 @@
-import '../Css/Programa.css';
-import {useParams} from 'react-router-dom';
+import "../Css/Programa.css";
+import { useParams } from "react-router-dom";
+import {useState} from 'react';
+import { Tecnologo } from "../components/Tecnologo";
+import { Tecnico } from "../components/Tecnico";
+// ESTE ES EL ARREGLO DE DATOS FICTICIO, QUE SIMULA EL QUE SE SACA DEL JSON
 const programas = [
   {
-    id: 1,
-    title: "Construcción",
-    description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos similique nam, quaerat laborum odit pariatur. Deleniti facilis quaerat consectetur eius perferendis? Architecto eum fugit nemo facilis minus? Porro, voluptas delectus.",
-    image: "/src/images/construccion.jpg",
-    link: "/areas/construccion",
-    param: "construccion",
-    tipos: [
+    tipo: "tecnologo",
+    programas: [
       {
-        tipoPrograma: "Técnicos",
-        programas: [
+        tipoPrograma: "TECNÓLOGO",
+        tituloPrograma: "ARQUITECTURA",
+        tituloFiltrado: "arquitectura",
+        tipoFiltrado: "tecnologo",
+        area: "construccion",
+        descripcionPrograma:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde saepe quod eum rerum cumque necessitatibus, magni debitis accusantium minima odio? Obcaecati, aperiam ipsum. Sed labore quis dignissimos corporis fuga explicabo nemo dolor, dolores harum praesentium perferendis aspernatur minus placeat autem?",
+        imagenes: [
           {
-            id: 1,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-            descripcion: "Descripción del programa técnico 1...",
-            imagenes: ["/src/images/tecnico1-img1.jpg", "/src/images/tecnico1-img2.jpg"],
+            srcImagen1: "/src/images/Arquitectura1.jpg",
           },
           {
-            id: 2,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-            descripcion: "Descripción del programa técnico 1...",
-            imagenes: ["/src/images/tecnico1-img1.jpg", "/src/images/tecnico1-img2.jpg"],
-          },
-          {
-            id: 3,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-            descripcion: "Descripción del programa técnico 1...",
-            imagenes: ["/src/images/tecnico1-img1.jpg", "/src/images/tecnico1-img2.jpg"],
-          },
-          {
-            id: 4,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-            descripcion: "Descripción del programa técnico 1...",
-            imagenes: ["/src/images/tecnico1-img1.jpg", "/src/images/tecnico1-img2.jpg"],
+            srcImagen2: "/src/images/Arquitectura2.jpg",
           },
         ],
       },
       {
-        tipoPrograma: "Tecnólogos",
-        programas: [
+        tipoPrograma: "TECNÓLOGO",
+        tituloPrograma: "DISEÑO ARQUITECTONICO",
+        tituloFiltrado: "diseñoarquitectonico",
+        tipoFiltrado: "tecnologo",
+        area: "construccion",
+        descripcionPrograma:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde saepe quod eum rerum cumque necessitatibus, magni debitis accusantium minima odio? Obcaecati, aperiam ipsum. Sed labore quis dignissimos corporis fuga explicabo nemo dolor, dolores harum praesentium perferendis aspernatur minus placeat autem?",
+        imagenes: [
           {
-            id: 1,
-            programa: "Arquitectura",
-            ruta: "/areas/construccion/arquitectura",
-            descripcion: "Descripción del programa de arquitectura...",
-            imagenes: ["/src/images/arquitectura-img1.jpg", "/src/images/arquitectura-img2.jpg"],
+            srcImagen1: "/src/images/Arquitectura1.jpg",
           },
           {
-            id: 2,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-            descripcion: "Descripción del programa de arquitectura...",
-            imagenes: ["/src/images/arquitectura-img1.jpg", "/src/images/arquitectura-img2.jpg"],
-          },
-        ],
-      },
-      {
-        tipoPrograma: "Operarios",
-        programas: [
-          {
-            id: 1,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-          {
-            id: 2,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-          {
-            id: 3,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-        ],
-      },
-      {
-        tipoPrograma: "Especializaciones",
-        programas: [
-          {
-            id: 1,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-          {
-            id: 2,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
+            srcImagen2: "/src/images/Arquitectura2.jpg",
           },
         ],
       },
     ],
   },
   {
-    id: 2,
-    title: "Teleinformática",
-    description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos similique nam, quaerat laborum odit pariatur. Deleniti facilis quaerat consectetur eius perferendis? Architecto eum fugit nemo facilis minus? Porro, voluptas delectus.",
-    image: "/src/images/informatica.jpg",
-    link: "/areas/teleinformatica",
-    param: "teleinformatica",
-    tipos: [
+    tipo: "tecnico",
+    programas: [
       {
-        tipoPrograma: "Técnicos",
-        programas: [
-          {
-            id: 1,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-          },
-          {
-            id: 2,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-          },
-          {
-            id: 3,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-          },
-          {
-            id: 4,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-          },
-        ],
+        tipoPrograma: "TÉCNICO",
+        tituloPrograma: "Técnico en LABORATORIO DE SUELOS",
+        tituloFiltrado: "laboratoriodesuelos",
+        tipoFiltrado: "tecnico",
+        area: "construccion",
+        descripcionPrograma:
+          "El profesional técnico en Laboratorio de Suelos, Concreto y Asfalto tiene la capacidad de determinar las propiedades de suelos, concreto, asfalto y materiales complementarios de construcción en laboratorio y campo.",
+        duracion: "12 Meses",
+        jornada: "Diurna y nocturna",
+        imagenFondo: "/src/images/tecnico_laboratorio_de_suelos.jpg",
       },
       {
-        tipoPrograma: "Tecnólogos",
-        programas: [
-          {
-            id: 1,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-          {
-            id: 2,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-        ],
-      },
-      {
-        tipoPrograma: "Operarios",
-        programas: [
-          {
-            id: 1,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-          {
-            id: 2,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-          {
-            id: 3,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-        ],
-      },
-      {
-        tipoPrograma: "Especializaciones",
-        programas: [
-          {
-            id: 1,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-          {
-            id: 2,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-        ],
+        tipoPrograma: "TÉCNICO",
+        tituloPrograma: "Técnico en AUTOMATIZACIÓN DE CNC",
+        tituloFiltrado: "automatizacioncnc",
+        tipoFiltrado: "tecnico",
+        area: "automatizacion",
+        descripcionPrograma:
+          "El profesional técnico en Automatización CNC, Concreto y Asfalto tiene la capacidad de determinar las propiedades de suelos, concreto, asfalto y materiales complementarios de construcción en laboratorio y campo.",
+        duracion: "14 Meses",
+        jornada: "Diurna y nocturna",
+        imagenFondo: "/src/images/tecnico_laboratorio_de_suelos.jpg",
       },
     ],
   },
   {
-    id: 3,
-    title: "Automatizacion",
-    description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos similique nam, quaerat laborum odit pariatur. Deleniti facilis quaerat consectetur eius perferendis? Architecto eum fugit nemo facilis minus? Porro, voluptas delectus.",
-    image: "/src/images/automatizacion.jpg",
-    link: "/areas/automatizacion",
-    param: "automatizacion",
-    tipos: [
+    tipo: "operario",
+    programas: [
       {
-        tipoPrograma: "Técnicos",
-        programas: [
-          {
-            id: 1,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-          },
-          {
-            id: 2,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-          },
-          {
-            id: 3,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-          },
-          {
-            id: 4,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
-          },
-        ],
+        tipoPrograma: "OPERARIO",
+        tituloPrograma: "PROGRAMA DE OPERARIO",
+        tituloFiltrado: "sierraselectricas",
+        tipoFiltrado: "operario",
+        area: "construccion",
+        descripcionPrograma:
+          "El programa de operario en sierras eléctricas, tiene la capacidad de determinar las propiedades de suelos, concreto, asfalto y materiales complementarios de construcción en laboratorio y campo.",
+        duracion: "8 Meses",
+        jornada: "Diurna y nocturna",
+        imagenFondo: "/src/images/operario.jpg",
       },
+    ],
+  },
+  {
+    tipo: "especializacion",
+    programas: [
       {
-        tipoPrograma: "Tecnólogos",
-        programas: [
+        tipoPrograma: "ESPECIALIZACIÓN",
+        tituloPrograma: "ESPECIALIZACIÓN EN CEMENTO",
+        tituloFiltrado: "cemento",
+        tipoFiltrado: "especializacion",
+        area: "construccion",
+        descripcionPrograma:
+          "El programa de especialización en cemento, tiene la capacidad de determinar las propiedades de suelos, concreto, asfalto y materiales complementarios de construcción en laboratorio y campo.",
+        imagenes: [
           {
-            id: 1,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
+            srcImagen1: "/src/images/Arquitectura1.jpg",
           },
           {
-            id: 2,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
+            srcImagen2: "/src/images/Arquitectura2.jpg",
           },
         ],
-      },
-      {
-        tipoPrograma: "Operarios",
-        programas: [
-          {
-            id: 1,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-          {
-            id: 2,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-          {
-            id: 3,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-        ],
-      },
-      {
-        tipoPrograma: "Especializaciones",
-        programas: [
-          {
-            id: 1,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-          {
-            id: 2,
-            programa: "programa 2",
-            ruta: "/areas/construccion/programa2",
-          },
-        ],
+        duracion: "4 Meses",
+        jornada: "Diurna y nocturna",
+        imagenFondo: "/src/images/operario.jpg",
       },
     ],
   },
 ];
+
+// ESTE ES EL COMPONENTE QUE EVALÚA SI EL PROGRAMA QUE SE PUSO EN LA URL ES UN TÉCNICO, UN TÉCNOLOGO, OPERARIO O ESPECIALIZACIÓN, LA PLANTILLA USADA PARA TÉCNICO Y TECNÓLOGO ES LA MISMA PARA OPERARIOS Y ESPECIALIZACIÓN
 export const Programa = () => {
+  // por medio de desestructuración, extraemos el nombre del programa específico de la url 
   const { nombrePrograma } = useParams();
-  const programa = programas.find((programa) => programa.tipos.tipoPrograma === nombrePrograma);
-  
 
-  if (!nombrePrograma) {
-    return <div>Área no encontrada</div>;
+
+  // aquí creo el arreglo programas, y el setProgramas se usa para modificar la información dentro del arreglo, y con el useState lo inicializamos como un arreglo vacío hasta que se consuma la api con el getData()
+  const [variosProgramas, setVariosProgramas] = useState([]);
+
+
+// este bloque comentado es el que se va a usar para consumir la api
+  
+//   useEffect(() => {
+//     const getData = async () => {
+//       const url = ``;    AQUÍ SE DEBE PONER LA URL DE LA API CON EL ENDPOINT DE PROGRAMA ej: www.info-sena.com/areas/construccion/<:nombrePrograma>
+//       const resp = await fetch(url);
+//       const programas = await resp.json();
+//       return setVariosProgramas(programas);
+//     };
+//     getData();
+//   }, [variosProgramas]);
+// debajo de getData() tenemos una coma y un arreglo con variosProgramas adentro, esta es la dependencia que cuando cambie, hará que se vuelva a renderizar de manera automática los componentes
+
+
+  // aquí estamos filtrando el programa que coincida con el de la url para utilizarlo y renderizarlo
+  const programaUrl = programas.reduce((result, tipoPrograma) => {
+    if (!result) {
+      return tipoPrograma.programas.find(
+        (programa) => programa.tituloFiltrado === nombrePrograma
+      );
+    }
+    return result;
+  }, null);
+
+  if (!programaUrl) {
+    return <div>Programa no encontrado</div>;
   }
-  
-  return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img class="verde" src={verde} /> */}
-        <h1 className="text-sm-end">TECNÓLOGO</h1>
-        <h2>DIBUJO ARQUITECTONICO</h2>
-        <div className="centrado">Lorem ipsum dolor sit amet, consectetuer adipiscing
-          elit, sed diam nonummy nibh euismod lncidunt ut
-          laoreet dolore magna aliquam erat volutpat. Ut wisi
-          enim ad minim veniam, quis nostrud exerci taóon
-          ullamcorper suscipit lobors nisl ut aliquip ex ea
-          commodo consequat. Duis autem vel eum iriure
-          dolor in hendrerit in vulputate velit esse molese</div>
-        
-        <button type="button" className="btn btn-outline-dark"><a href="https://oferta.senasofiaplus.edu.co/sofia-oferta/">INSCRIBIRSE</a></button>
-        <div className='imagenes'>
-          {/* <img class="Azul" src={azul} /> */}
-          <img className="Imagen1" src='/src/images/Arquitectura1.jpg' />
-          <img className="Imagen2" src='/src/images/Arquitectura2.jpg' />
 
-
-        </div>
-
-      </header>
-    </div>
-  );
-}
+  // si se encuentra un resultado en la variable anterior, entonces lo mostraremos dependiendo del tipo de programa, y lo pasamos por props (propiedades)
+  switch (programaUrl.tipoFiltrado) {
+    case "tecnico":
+      return <Tecnico programa={programaUrl} />;
+    case "tecnologo":
+      return <Tecnologo programa={programaUrl} />;
+    case "operario":
+      return <Tecnico programa={programaUrl} />;
+    case "especializacion":
+      return <Tecnologo programa={programaUrl} />;
+    default:
+      return <div>Tipo de programa no soportado</div>;
+  }
+};

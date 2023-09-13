@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import '../Css/Inicio.css'
+// Componente de inicio que renderiza el video de fondo, la barra de navegación y el botón que redirige al recorrido 3D
 export const Inicio = () => {
   return (
     <>

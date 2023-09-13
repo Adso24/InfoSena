@@ -1,0 +1,33 @@
+.texto-tecnicos {
+    width: 82%;
+    max-width: 800px;
+    margin: 5px;
+    padding: 2%;
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */ 
+    /* Evita que el texto se desborde horizontalmente */
+    overflow: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+  
+    /* Estilos para pantallas pequeñas */
+    @media screen and (max-width: 768px) {
+        margin: 1%; /* Ajusta el margen según tus necesidades */
+        padding: 1%; /* Ajusta el padding según tus necesidades */
+        text-align: left; /* Alinea el texto al centro para mejorar la legibilidad */
+    }
+  }
+  
+  .texto-tecnicos h2 {
+    font-size: 2rem; /* Utiliza unidades rem para el tamaño de fuente */
+  }
+  
+  /* Ajusta el tamaño de fuente para pantallas pequeñas */
+  @media screen and (max-width: 768px) {
+    .texto-tecnicos h2 {
+        font-size: 1.5rem; /* Ajusta el tamaño de fuente según tus necesidades */
+    }
+  }
+  
+    
+  
+    

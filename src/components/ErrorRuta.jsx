@@ -1,5 +1,6 @@
 import { useRouteError } from "react-router-dom";
 import '../Css/Error.css'
+// Componente de error en caso de que la ruta ingresada no exista o no se encuentre
 export const ErrorPage = () => {
     const error = useRouteError();
   

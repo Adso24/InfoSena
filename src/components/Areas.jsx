@@ -1,8 +1,9 @@
 import {React, useEffect, useState} from "react";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link} from "react-router-dom";
 import "../Css/Areas.css";
 import { ErrorPage } from "../components/ErrorRuta";
 
+// Este es el arreglo de datos ficticio que contiene todas las áreas disponibles, su propiedad link es la que uso para redirigir a la ruta deseada, por medio de Link de react-router-dom
 const areas = [
   {
     id: 1,
@@ -70,24 +71,28 @@ const areas = [
   },
 ];
 export const Areas = () => {
-  const [data, setData] = useState([]);
+  // creamos el arreglo de datos vacío y el modificador del arreglo haciendo uso del hook useState(), un hook es una función predeterminada de react
+  const [dataAreas, setDataAreas] = useState([]);
 
 
-  useEffect(() => {
-    const getData = async () => {
-      const url = ``;
-      const resp = await fetch(url);
-      const data = await resp.json();
-      return setData(data);
-    };
-    getData();
-  }, [data]);
+  // En este bloque consumimos la api y hacemos que se renderice automáticamente cuando cambie la información dentro de dataAreas
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const url = ``;   AQUÍ SE DEBE PONER LA URL DE LA API CON EL ENDPOINT DE AREAS ej: www.info-sena.com/areas/
+  //     const resp = await fetch(url);
+  //     const data = await resp.json();
+  //     return setDataAreas(data);
+  //   };
+  //   getData();
+  // }, [dataAreas]);
 
   return (
     <>
 
     <div className="imagen-fondo-areas">
 
+
+{/* Esta es la barra de navegación, que la reutilizamos en varios componentes */}
       <nav>
         <div className="navegacion-areas">
           <Link to="/">Inicio</Link>
@@ -114,12 +119,12 @@ export const Areas = () => {
       </div>
 
       <div id="contenedor-padre">
-        {areas.map(({ id, title, description, image, link }) => {
+        {/* Recorremos el arreglo de areas sacado de la api y renderizamos sus propiedades */}
+        {areas.map(({ id, title, image, link }) => {
           return (
             <div key={id} className="area">
               <img src={image} alt="imagen-area" className="imagen-area" />
               <p className="titulo-area">{title}</p>
-              {/* <p className="descripcion-area">{description}</p> */}
               <Link to={`${link}`} className="enlace-areas">
                 Ver más
               </Link>
