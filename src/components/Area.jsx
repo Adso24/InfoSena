@@ -7,7 +7,7 @@ const programas = [
     id: 1,
     title: "Construcción",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos similique nam, quaerat laborum odit pariatur. Deleniti facilis quaerat consectetur eius perferendis? Architecto eum fugit nemo facilis minus? Porro, voluptas delectus.",
+      "el área de Construcción prepara a los estudiantes para desempeñar roles en la construcción de edificios, infraestructuras y proyectos relacionados, brindando una educación práctica y relevante para la industria.",
     image: "/src/images/construccion.jpg",
     link: "/areas/construccion",
     param: "construccion",
@@ -17,8 +17,8 @@ const programas = [
         programas: [
           {
             id: 1,
-            programa: "laboratorio de suelos",
-            ruta: "/areas/construccion/laboratoriodesuelos",
+            programa: "programa 1",
+            ruta: "/areas/construccion/programa1",
           },
           {
             id: 2,
@@ -94,8 +94,8 @@ const programas = [
     id: 2,
     title: "Teleinformática",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos similique nam, quaerat laborum odit pariatur. Deleniti facilis quaerat consectetur eius perferendis? Architecto eum fugit nemo facilis minus? Porro, voluptas delectus.",
-    image: "/src/images/informatica.jpg",
+      "El área de Teleinformática se dedica a proporcionar a los estudiantes una educación sólida en tecnología de la información y las comunicaciones, preparándolos para carreras exitosas en campos relacionados con la informática y las telecomunicaciones.",
+    image: "/src/images/Arquitectura1.jpg",
     link: "/areas/teleinformatica",
     param: "teleinformatica",
     tipos: [
@@ -104,13 +104,13 @@ const programas = [
         programas: [
           {
             id: 1,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
+            programa: "Programación de software",
+            ruta: "/areas/teleinformatica/programaciondesoftware",
           },
           {
             id: 2,
-            programa: "programa 1",
-            ruta: "/areas/construccion/programa1",
+            programa: "Herramientas TIC",
+            ruta: "/areas/teleinformatica/herramientastic",
           },
           {
             id: 3,
@@ -178,7 +178,7 @@ const programas = [
   },
   {
     id: 3,
-    title: "Automatizacion",
+    title: "Automatización",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos similique nam, quaerat laborum odit pariatur. Deleniti facilis quaerat consectetur eius perferendis? Architecto eum fugit nemo facilis minus? Porro, voluptas delectus.",
     image: "/src/images/automatizacion.jpg",
@@ -190,8 +190,94 @@ const programas = [
         programas: [
           {
             id: 1,
-            programa: "Automatización CNC",
-            ruta: "/areas/automatizacion/automatizacioncnc",
+            programa: "programa 1",
+            ruta: "/areas/automatizacion/programa1",
+          },
+          {
+            id: 2,
+            programa: "programa 1",
+            ruta: "/areas/automatizacion/programa1",
+          },
+          {
+            id: 3,
+            programa: "programa 1",
+            ruta: "/areas/automatizacion/programa1",
+          },
+          {
+            id: 4,
+            programa: "programa 1",
+            ruta: "/areas/automatizacion/programa1",
+          },
+        ],
+      },
+      {
+        tipoPrograma: "Tecnólogos",
+        programas: [
+          {
+            id: 1,
+            programa: "programa 2",
+            ruta: "/areas/construccion/programa2",
+          },
+          {
+            id: 2,
+            programa: "programa 2",
+            ruta: "/areas/construccion/programa2",
+          },
+        ],
+      },
+      {
+        tipoPrograma: "Operarios",
+        programas: [
+          {
+            id: 1,
+            programa: "programa 2",
+            ruta: "/areas/construccion/programa2",
+          },
+          {
+            id: 2,
+            programa: "programa 2",
+            ruta: "/areas/construccion/programa2",
+          },
+          {
+            id: 3,
+            programa: "programa 2",
+            ruta: "/areas/construccion/programa2",
+          },
+        ],
+      },
+      {
+        tipoPrograma: "Especializaciones",
+        programas: [
+          {
+            id: 1,
+            programa: "programa 2",
+            ruta: "/areas/construccion/programa2",
+          },
+          {
+            id: 2,
+            programa: "programa 2",
+            ruta: "/areas/construccion/programa2",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Confecciones",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos similique nam, quaerat laborum odit pariatur. Deleniti facilis quaerat consectetur eius perferendis? Architecto eum fugit nemo facilis minus? Porro, voluptas delectus.",
+    image: "/src/images/confecciones.jpg",
+    link: "/areas/confecciones",
+    param: "confecciones",
+    tipos: [
+      {
+        tipoPrograma: "Técnicos",
+        programas: [
+          {
+            id: 1,
+            programa: "Analisis de Muestras",
+            ruta: "/areas/confecciones/analisisdemuestras",
           },
           {
             id: 2,
@@ -270,24 +356,26 @@ export const Area = () => {
 
   
   // aquí creo el arreglo programas, y el setProgramas se usa para modificar la información dentro del arreglo, y con el useState lo inicializamos como un arreglo vacío hasta que se consuma la api con el getData()
-  // const [areas, setAreas] = useState([]);
+  const [areas, setAreas] = useState([]);
 
 
+  
 // este bloque comentado es el que se va a usar para consumir la api
   
-//   useEffect(() => {
-//     const getData = async () => {
-//       const url = ``;    AQUÍ SE DEBE PONER LA URL DE LA API CON EL ENDPOINT DE AREA ej: www.info-sena.com/areas/<:nombreArea>
-//       const resp = await fetch(url);
-//       const areasJson = await resp.json();
-//       return setAreas(areasJson);
-//     };
-//     getData();
-//   }, [areas]);
-// debajo de getData() tenemos una coma y un arreglo con areas adentro, esta es la dependencia que cuando cambie, hará que se vuelva a renderizar de manera automática los componentes
+  useEffect(() => {
+    const getData = async () => {
+      const url = `https://santiporres.softkra.com/programas/`;    
+      const resp = await fetch(url);
+      const areasJson = await resp.json();
+      return setAreas(areasJson);
+    };
+    getData();
+  }, [areas]);
+
 
   // Filtramos el área del arreglo de datos extraído de la api y lo usamos para renderizar la información
-  const area = programas.find((programa) => programa.param === nombreArea);
+  const area = areas.find((programa) => programa.param === nombreArea);
+  console.log(areas);
 
   if (!area) {
     return <div>Área no encontrada</div>;
@@ -295,7 +383,7 @@ export const Area = () => {
 
   return (
     <>
-      <div className="contenedor-padre">
+      <div className="contenedor-padre-area">
         <div className="contenedor-padre-elementos">
           <div className="contenido-izquierda">
             <div className="contenedor-header-area">
@@ -316,7 +404,7 @@ export const Area = () => {
                     {tipo.programas.map((programa) => (
                       <li key={programa.id}>
                         {/* Los elementos Link son sacados de la dependencia react-router-dom, que permite agregar rutas en React */}
-                        <Link to={programa.ruta}>-{programa.programa}</Link>
+                        <Link className="programa-area-individual" to={programa.ruta}>-{programa.programa}</Link>
                       </li>
                     ))}
                   </ul>
@@ -327,7 +415,8 @@ export const Area = () => {
           <div className="contenido-derecha">
             <div className="tarjeta-imagen">
               <img
-                src="/src/images/construccion.jpg"
+                className="imagen-area-individual"
+                src={area.image}
                 alt="imagen-area-individual"
                 width="50%"
                 height="auto"

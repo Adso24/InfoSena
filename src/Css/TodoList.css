@@ -1,16 +1,4 @@
-.responsive-todo-list {
-    font-family: 'Times New Roman', Arial, Helvetica;
-    width: 100%; /* Ajusta el ancho automáticamente */
-    max-width: 1000px; /* Ajusta según tus necesidades */
-    text-align: left; /* Alinea el texto al lado izquierdo */
-    margin: 5px; /* Ajusta según tus necesidades */
-    padding: 20px; /* Ajusta según tus necesidades */
-    font-size: 1.5vw; /* Tamaño de fuente basado en el ancho de la pantalla */
-    white-space: normal; /* Permite que el texto se divida en varias líneas */
-    overflow-wrap: break-word; /* Evita que el texto se distorsione */
-}
 
-  
   
   
   

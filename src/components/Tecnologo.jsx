@@ -15,7 +15,7 @@ export const Tecnologo = ({ programa }) => {
           {/* en todas las secciones donde se vea programa.propiedad, indica que se está accediendo a las propiedades del programa que se recibió por props */}
           <div key={programa.tituloFiltrado}>
             <Link to={`/areas/${programa.area}`}>
-              <span className="material-symbols-outlined flecha-volver-atras">
+              <span className="material-symbols-outlined flecha-volver-atras-tecnologo">
                 arrow_back
               </span>
             </Link>

@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../Css/Bienestar.css";
 import { Slider } from "../components/Slider";
+import {Footer} from './SobreNosotros';
+import {MenuHamburguesa} from './SobreNosotros';
+
+//Traductor
+import Traductor from './Translate'
 
 export const Bienestar = () => {
   // Creamos dos variables booleanas para utilizar de auxiliares en los botones "ver más" o lightbox, los definimos en false para que no se activen por defecto, los creamos con el hook useState()
@@ -29,14 +34,16 @@ export const Bienestar = () => {
   return (
     <>
       {/* BARRA DE NAVEGACIÓN */}
-      <header>
-        <nav>
+      <header className="container-menu">
+        <nav className="container-menu-content">
           <div className="navegacion-areas margen-nav">
             <Link to="/">Inicio</Link>
             <Link to="/bienestar">Bienestar</Link>
-            <Link to="/biblioteca">Biblioteca</Link>
+            <Link to="/SobreNosotros">Sobre Nosotros</Link>
             <Link to="/areas">Áreas</Link>
+            <Link to="/calendario">Calendario</Link>
           </div>
+          <Traductor/>
         </nav>
       </header>
 
@@ -47,7 +54,7 @@ export const Bienestar = () => {
             <div className="imagen1-bienestar">
               <img src="/src/images/bienestar-header.png" alt="" />
             </div>
-            <h1>
+            <h1 className="titulo-bienestar">
               BIENVENID@S A <br /> BIENESTAR AL <br /> APRENDIZ
             </h1>
           </div>
@@ -58,11 +65,11 @@ export const Bienestar = () => {
       <section>
         <div className="contenedor-bienestar-seccion-2">
           <div className="parte-izquierda-bienestar">
-            <h1 className="titulo-seccion-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
-              tempore deleniti maxime laborum delectus dolorem praesentium
-              repellat cupiditate iure quo?
-            </h1>
+            <div className="titulo-seccion-2-container">
+              <h1 className="titulo-seccion-2">
+              Es una estrategia institucional para contribuir en la permanencia y el desempeño exitoso de los aprendices de la entidad en su proceso formativo con enfoque territorial y diferencial.
+              </h1>
+            </div>
             <a
               href="#"
               className="boton-lightbox-seccion-2"
@@ -77,7 +84,7 @@ export const Bienestar = () => {
             </a>
           </div>
           <div className="imagen-2-bienestar">
-            <img src="/src/images/bienestar-enfermeria.png" alt="" />
+            <img className="imagen-bienestar-enfermeria" src="/src/images/bienestar-enfermeria.png" alt="" />
           </div>
         </div>
 
@@ -130,11 +137,11 @@ export const Bienestar = () => {
             </div>
           </div>
           <div className="parte-izquierda-bienestar">
-            <h1 className="titulo-seccion-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
-              tempore deleniti maxime laborum delectus dolorem praesentium
-              repellat cupiditate iure quo?
-            </h1>
+            <div className="titulo-seccion-2-container">
+              <h1 className="titulo-seccion-2">
+              De acuerdo con las normas y apartes vigentes de la Ley 119 de 1994 y el Decreto 249 de 2004 (Modificado parcialmente por el Decreto 2520 de 2013), la “Estructura Formal” que tiene actualmente el SENA para el desarrollo de sus funciones
+              </h1>
+            </div>
             <a
               href="#"
               className="boton-lightbox-seccion-2"
@@ -165,11 +172,12 @@ export const Bienestar = () => {
               </div>
               <div className="texto-imagen-lightbox">
                 <p className="texto-lightbox-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Soluta voluptas adipisci aut id omnis nostrum, laboriosam
-                  quaerat harum aspernatur nobis ipsa eveniet hic, officiis
-                  fuga? Aliquid, sapiente illo beatae cum molestiae et commodi
-                  aperiam. Atque magni incidunt molestiae reiciendis alias.
+                Con respecto al círculo incorporado en la estructura organizativa, se requiere modificar en
+el sentido que, el Consejo Regional o Distrital, deberá quedar con la línea horizontal de
+autoridad y desaparecer la línea de asesor como aparece en la gráfica anterior; teniendo en
+cuenta lo establecido en la “Ley 119 de 1994 Artículo 16. Dirección y Administración
+Regional. La Dirección y Administración de las regionales de la Entidad estará a cargo de un
+consejo regional y un director regional”.
                 </p>
                 <img
                   className="imagen-lightbox-directivas"
@@ -187,6 +195,8 @@ export const Bienestar = () => {
           <Slider />
         </div>
       </section>
+      <Footer/>
+      <MenuHamburguesa/>
     </>
   );
 };

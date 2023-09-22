@@ -13,8 +13,9 @@ h1{
 }
 .descripcion-area{
     font-weight: 300;
+    font-size: 2rem;
 }
-.contenedor-padre{
+.contenedor-padre-area{
     width: 100%;
     height: 100vh;
     padding: 5rem 2rem 2rem 12rem;
@@ -25,6 +26,14 @@ h1{
     border: none;
 
     background-repeat: no-repeat;
+}
+.contenedor-header-area .flecha-volver-atras{
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 5rem;
+    color: #00324D;
+
 }
 .flecha-volver-atras{
     position: absolute;
@@ -47,6 +56,10 @@ h1{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
+}
+.programa-area-individual{
+
+    color: #00324D;
 }
 .contenedor-programas h2{
     font-family: 'roboto';
@@ -78,5 +91,37 @@ h1{
 }
 .tarjeta-imagen img{
     box-shadow: .6rem .6rem .8rem rgba(0, 0, 0, 0.3);
+
+}
+.imagen-area-individual{
+    width: 425px;
+}
+
+/* MEDIA QUERIE */
+@media screen and (max-width:500px){
+
+    .contenedor-padre-area{
+        padding: 2rem;
+        background-image: none;
+        margin-top: 5rem;
+    }
+    
+    .contenedor-padre-elementos{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    .contenedor-header-area{
+        display: flex;
+        flex-direction: column;
+    }
+    .contenedor-header-area a .flecha-volver-atras{
+        position: absolute;
+        top: 0;
+    }
+    
 
 }
